@@ -258,6 +258,44 @@ plt.show()
 
 ---
 
+## Análisis de Datos
+
+El análisis de datos es un proceso que implica la inspección, limpieza, transformación y modelado de datos con el objetivo de descubrir información útil, sacar conclusiones y respaldar la toma de decisiones.
+
+**1. Definición del problema**
+
+Identifica el problema o la pregunta que deseas responder para establecer objetivos y requisitos.
+
+**2. Recopilación de datos**
+
+Reúne los datos alojados en fuentes como bases de datos, archivos CSV, JSON o APIs.
+
+**3. Limpieza de datos**
+
+Identifica y corrige errores. Trata los valores nulos, estandariza formatos, elimina duplicados.
+
+**4. Exploración de datos**
+
+Analiza los datos para obtener una comprensión más profunda de su contenido. Calcula estadísticas descriptivas, crea visualizaciones, explora relaciones entre variables.
+
+**5. Preparación de datos**
+
+Prepara los datos para el modelado. Selecciona características relevantes, normaliza escalas y codifica variables categóricas.
+
+**6. Modelado de datos**
+
+Aplica técnicas de modelado y análisis estadístico. Algoritmos de aprendizaje automático, análisis de regresión o análisis de series temporales.
+
+**7. Evaluación de resultados**
+
+Evalúa la validez y relevancia de los resultados del análisis.
+
+**8. Comunicación de resultados**
+
+Presenta los resultados de manera clara y comprensible utilizando visualizaciones, informes u otros medios apropiados. Explica las conclusiones y cómo se pueden utilizar para respaldar la toma de decisiones.
+
+---
+
 ## Matplotlib
 
 **Biblioteca de visualización de datos en Python.**
