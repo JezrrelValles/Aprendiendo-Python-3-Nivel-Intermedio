@@ -3,7 +3,7 @@ marp: true
 theme: gaia
 ---
 
-# Git
+### Git
 
 Configurar **Git** con sus credenciales.
 
@@ -14,11 +14,11 @@ git config --global user.email "correo@electrónico.com"
 
 ---
 
-# Módulos y paquetes
+### Módulos y paquetes
 
 ---
 
-# NumPy
+### NumPy
 
 **Biblioteca fundamental para el procesamiento numérico en Python.**
 
@@ -26,7 +26,7 @@ Proporciona un conjunto de **funciones y estructuras de datos** eficientes para 
 
 ---
 
-## Instalar la biblioteca
+### Instalar la biblioteca
 
 Para tener los módulos y paquetes de **NumPy** en tu ordenador, debes **instalar** la librería:
 
@@ -45,7 +45,7 @@ import numpy as np
 
 ---
 
-## Creacion de arreglos (array)
+### Creacion de arreglos (array)
 
 **NumPy** ofrece varias funciones para crear **arreglos**. 
 
@@ -75,7 +75,7 @@ aleatorio = np.random.rand(2,2)
 
 ---
 
-## Operaciones con arreglos
+### Operaciones con arreglos
 
 NumPy proporciona un conjunto completo de operaciones matemáticas y lógicas para trabajar con arreglos.
 
@@ -104,7 +104,7 @@ arr3 = np.divide(arr1, arr2)
 ```
 ---
 
-## Funciones de agregación
+### Funciones de agregación
 
 **NumPy** ofrece funciones de **agregación** para realizar **cálculos estadísticos** en arreglos.
 
@@ -133,7 +133,7 @@ minimo = np.min(arr)
 ```
 ---
 
-## Indexación y rebanado de arreglos
+### Indexación y rebanado de arreglos
 
 Puedes acceder a elementos individuales y subconjuntos de arreglos utilizando **indexación y rebanado.**
 
@@ -158,7 +158,7 @@ arr[:, 1]
 
 ---
 
-## Copias y vistas
+### Copias y vistas
 
 Con **NumPy** puedes crear **copias o vistas** independientes de tus arreglos
 
@@ -173,7 +173,7 @@ y = arr.view()
 ```
 ---
 
-## Concatenación
+### Concatenación
 
 **NumPy** cuenta con funciones de concatenación para **tuplas de arreglos.**
 
@@ -183,7 +183,7 @@ arr3 = np.concatenate((arr1, arr2))
 
 ---
 
-## Búsqueda y ordenamiento
+### Búsqueda y ordenamiento
 
 **NumPy** permite **buscar** elementos dentro del arreglo que cumplan con condiciones.
 ```python
@@ -197,7 +197,7 @@ x = np.sort(arr)
 
 ---
 
-## Operaciones de álgebra lineal
+### Operaciones de álgebra lineal
 
 NumPy también es ampliamente utilizado en álgebra lineal.
 
@@ -222,7 +222,7 @@ np.linalg.solve(matrix, vector)
 
 ---
 
-# Pandas
+### Pandas
 
 **Biblioteca de análisis de datos en Python.**
 
@@ -230,7 +230,7 @@ Permite **manipular y analizar** fácilmente estructuras de datos, como tablas, 
 
 ---
 
-## Instalar la biblioteca
+### Instalar la biblioteca
 
 Para tener los módulos y paquetes de **Pandas** en tu ordenador, debes **instalar** la librería:
 
@@ -240,7 +240,7 @@ pip install pandas
 
 ---
 
-## Importar la biblioteca
+### Importar la biblioteca
 
 Para comenzar a utilizar **Pandas**, debes **importar** la librería en tu programa de Python:
 
@@ -249,7 +249,7 @@ import pandas as pd
 ```
 ---
 
-## Series
+### Series
 
 En **Pandas** las **Series** son como una columna de una tabla. Es decir, una **matriz unidimensional** que contiene **datos de cualquier tipo.**
 
@@ -258,7 +258,6 @@ a = np.array([1,2,3])
 
 srs = pd.Series(a)
 ```
----
 
 Los valores pueden ser etiquetados manualmente o ser inicializados con su número de índice.
 
@@ -268,7 +267,7 @@ srs = pd.Series(a, index = ["x", "y", "z"])
 
 ---
 
-## DataFrames
+### DataFrames
 
 **Pandas** ofrece estructuras de datos bidimiensionales, como una tabla con filas y columnas llamadas **DataFrames.**
 
@@ -308,7 +307,7 @@ data[data['columna'] > 10]
 data['nueva_columna'] = ...
 ```
 ---
-## Explorando los datos
+### Explorando los datos
 
 **Pandas** proporciona diversas funciones para **explorar y manipular** los datos.
 
@@ -331,7 +330,7 @@ data.describe()
 ```
 
 ---
-## Cargar y visualizar datos
+### Cargar datos
 
 **Pandas** puede **leer datos** de diferentes fuentes, como archivos **CSV, JSON o bases de datos.**
 
@@ -341,9 +340,13 @@ A continuación, se muestra un **ejemplo** de carga de datos desde un archivo CS
 data = pd.read_csv('datos.csv')
 ```
 
---- 
+---
 
-## Visualización de datos
+### Limpieza de datos
+
+
+
+### Visualización de datos
 
 **Pandas** también se **integra** con bibliotecas de visualización, como **Matplotlib** y **Seaborn**, para crear **gráficos y visualizaciones.**
 
@@ -358,7 +361,7 @@ plt.show()
 
 ---
 
-# Matplotlib
+### Matplotlib
 
 **Biblioteca de visualización de datos en Python.**
 
@@ -375,7 +378,7 @@ import matplotlib as plt
 
 ---
 
-## Creación de gráficos básicos
+### Creación de gráficos básicos
 
 **Matplotlib** ofrece una variedad de **tipos de gráficos** para **visualizar datos.**
 
@@ -406,7 +409,7 @@ plt.pie(x, y)
 
 ---
 
-## Personalización de gráficos
+### Personalización de gráficos
 
 **Matplotlib** permite **personalizar** varios aspectos de los gráficos, como el **estilo, colores, etiquetas, títulos, ejes, etc.**
 
@@ -436,7 +439,7 @@ plt.plot(x, y, linestyle='dashed')
 
 ---
 
-## Múltiples gráficos y subtramas
+### Múltiples gráficos y subtramas
 
 Puedes combinar varios gráficos en una misma figura o crear subtramas para visualizar diferentes aspectos de los datos.
 
@@ -461,7 +464,7 @@ plt.subplots_adjust(hspace=0.5)
 
 ---
 
-## Guardar y exportar gráficos
+### Guardar y exportar gráficos
 
 Matplotlib permite guardar los gráficos generados en diferentes formatos, como PNG, PDF, SVG, etc.
 
@@ -478,9 +481,9 @@ plt.savefig('ejemplo.pdf')
 ```
 ---
 
-# Análisis de Datos
+### Análisis de Datos
 
-El análisis de datos es un proceso que implica la inspección, limpieza, transformación y modelado de datos con el objetivo de descubrir información útil, sacar conclusiones y respaldar la toma de decisiones.
+Proceso que implica la inspección, limpieza, transformación y modelado de datos con el objetivo de descubrir información útil, sacar conclusiones y respaldar la toma de decisiones.
 
 **1. Definición del problema**
 
@@ -520,7 +523,7 @@ Presenta los resultados de manera clara y comprensible utilizando visualizacione
 
 ---
 
-# Conclusiones
+### Conclusiones
 
 **NumPy** es una herramienta esencial para el procesamiento numérico y para trabajar eficientemente con arreglos multidimensionales en Python.
 

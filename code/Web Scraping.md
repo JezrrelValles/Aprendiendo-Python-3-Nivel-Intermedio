@@ -5,9 +5,16 @@ theme: gaia
 
 # Web Scraping
 
-Proceso de extraccion automatica de datos de paginas web.
+Proceso de extracción automática de datos de páginas web.
 
-Consiste en enviar solicitudes a una pagina web, analizar codigo HTML o XML resultante y extraer la informacion relevante.
+1. Envia solicitudes HTTP a una página web
+
+2. Analiza código HTML o XML resultante
+
+3. Extrae la información relevante
+
+Existen bibliotecas y herramientas en Python que facilitan el proceso de extracción de datos.
+
 
 ---
 
@@ -15,15 +22,17 @@ Consiste en enviar solicitudes a una pagina web, analizar codigo HTML o XML resu
 
 Biblioteca de **Python** utilizada para realizar **solicitudes HTTP** de manera sencilla y eficiente.
 
-Permite enviar solicitudes a servidores web y recibir respuesta, lo que es fundamental en el proceso de web scraping.
+Permite enviar solicitudes a servidores web y recibir respuesta.
 
-Algunas de las caracteristicas clave de Requests incluyen:
+Algunas de las características clave incluyen:
 
 1. Sintaxis sencilla
 
-2. Gestion de encabezados y parametros
+2. Gestión de encabezados y parámetros
 
 3. Autenticacion y cookies
+
+---
 
 4. Manejo de errores y redirecciones
 
@@ -31,7 +40,7 @@ Algunas de las caracteristicas clave de Requests incluyen:
 
 ---
 
-# Solicitudes HTTP
+## Solicitudes HTTP
 
 Mensajes enviados entre un cliente y un servidor web para intercambiar información.
 
@@ -45,37 +54,15 @@ En el contexto del web scraping, se utilizan solicitudes HTTP para obtener el c�
 
 4. DELETE
 
-5. PATCH
-
 ---
 
-# Gestion de parametros y encabezados
-
----
-
-# Manejo de cookies y sesiones
-
----
-
-# Manejo automatico de redirecciones y errores
-
----
-
-# Autenticacion y seguridad
-
----
-
-# Control de tiempos de espera y limites de velocidad
-
----
-
-# Análisis del codigo HTML
+## Análisis del codigo HTML
 
 Consiste en examinar el código HTML obtenido de una página web para identificar los elementos de interés que se desean extraer, como texto, imágenes o datos estructurados.
 
 ---
 
-# HTML (HyperText Markup Language)
+## HTML
 
 Lenguaje de marcado utilizado para estructurar y presentar el contenido de una página web.
 
@@ -83,7 +70,7 @@ Define la estructura y organizacion de los elementos en la pagina mediante etiqu
 
 ---
 
-# CSS (Cascading Style Sheets)
+## CSS
 
 Lenguaje de estilo utilizado para describir la presentación y el diseño de una página web.
 
@@ -91,7 +78,7 @@ Permite controlar el color, fuente, tamaño y disposición de los elementos HTML
 
 ---
 
-# Inspeccionar elementos
+## Inspeccionar elementos
 
 Proceso de examinar código fuente de una página web utilizando las herramientas de desarrollo de un navegador.
 
@@ -111,6 +98,8 @@ Algunas características importantes de BeautifulSoup son:
 
 2. Seleccion de elementos
 
+---
+
 3. Extraccion de datos
 
 4. Limpieza y formateo
@@ -129,7 +118,7 @@ Esto permite navegar y explorar la estructura del HTML de manera intuitiva.
 
 2. find_all()
 
-3. select()
+---
 
 4. find_next_sibling()
 
@@ -196,6 +185,8 @@ Puedes eliminar etiquetas no deseadas, comentarios o espaciones en blaco inneces
 4. Realizar solicitudes HTTP
 
 5. Crear un objeto BeautifulSoup
+
+---
 
 6. Identificar los elementos de interés
 
