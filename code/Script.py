@@ -62,14 +62,16 @@ def procesar_pagina(soup):
         stock = item.text.split()
         stocks.append(stock[1])
 
-    for i in range(len(titulos)):
+    min_length = min(len(titulos), len(skus), len(precios_originales), len(precios_descuento), len(precios_envio), len(stocks))
+    
+    for i in range(min_length):
         data.append({
-            "Título": titulos[i],
-            "SKU": skus[i],
-            "Precio Original": precios_originales[i],
-            "Precio Descuento": precios_descuento[i],
-            "Precio Envío": precios_envio[i],
-            "Stock": stocks[i]
+            "Título": titulos[i] if i < len(titulos) else None,
+            "SKU": skus[i]  if i < len(skus) else None,
+            "Precio Original": precios_originales[i]  if i < len(precios_originales) else None,
+            "Precio Descuento": precios_descuento[i] if i < len(precios_descuento) else None,
+            "Precio Envío": precios_envio[i] if i < len(precios_envio) else None,
+            "Stock": stocks[i] if i < len(stocks) else None
         })
 
 
@@ -97,6 +99,8 @@ import datetime
 
 fecha_actual = datetime.datetime.now().strftime("%d-%m-%Y")
 
-df.to_csv(f"../dataset/web scraping/Promociones-Cyberpuerta-{fecha_actual}.csv", index=False)
+df.to_csv(f"dataset/web scraping/Promociones-Cyberpuerta-{fecha_actual}.csv", index=False)
 
 
+
+# %%
