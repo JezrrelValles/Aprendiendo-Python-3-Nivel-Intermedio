@@ -438,17 +438,18 @@ Sistema de gestión de bases de datos relacional que se caracteriza por ser livi
 
 A diferencia de otros sistemas de bases de datos más robustos como MySQL o PostgreSQL, SQLite se ejecutra en el espacio de memoria del proceso de la aplicacion que lo utiliza y no requiere un servidor separado. Esto significa que no hay una configuracion compleja para empezar a utilizarlo y no hay un proceso externo que gestione la base de datos, lo que lo hace adecuado para aplicaciones de escritorio, dispositivos moviles y otros entornos de recursos limitados.
 
-1. Base de datos embebida
+**1. Base de datos embebida**
 
-2. Transacciones ACID
+**2. Transacciones ACID**
 
-3. Ligero y rapido
+**3. Ligero y rapido**
 
-4. Sin necesidad de configuracion
+**4. Sin necesidad de configuracion**
 
-5. Amplia compatibilidad
+**5. Amplia compatibilidad**
 
 Si bien es ideal para aplicaciones pequeñas y medianas con cargas de trabajo moderadas, puede no ser la mejor opción para aplicaciones web con grandes volúmenes de datos y alta concurrencia.
+
 ---
 
 ## Instalación
