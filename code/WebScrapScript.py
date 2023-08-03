@@ -100,5 +100,3 @@ import datetime
 fecha_actual = datetime.datetime.now().strftime("%d-%m-%Y")
 
 df.to_csv(f"{fecha_actual}.csv", index=False)
-
-

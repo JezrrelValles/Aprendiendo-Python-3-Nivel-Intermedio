@@ -287,3 +287,205 @@ Los modelos definidos con Pydantic pueden utilizarse para generar automáticamen
 **4. Serialización y deserialización**
 
 Pydantic facilita la conversiÓn de los modelos a formatos de serializaciÓn como JSON o XML.
+
+---
+
+# OpenAPI
+
+Estandar para describir, documentar y definir interfaces de programacion de aplicaciones (API) de manera clara y estructurada.
+
+Utiliza un formato de documento YAML o JSON para describir los puntos finales de la API, los parámetros que acepta, los tipo de datos que utilizan y los métodos de solicitud permitidos (como GET, POST, PUT, DELETE, etc.).
+
+Incluye información sobre las respuestas que puede devolver la API, los códigos de estado HTTP asociados y cualquier autenticación o autorización requerida para acceder a la API.
+
+**1. Documentación automática**
+
+**2. Facilita el desarrollo de clientes**
+
+**3. Mejora la colaboración**
+
+**4. Herramientas de validación**
+
+---
+
+# Ejemplo
+
+```python
+
+from fastapi import FastAPI
+
+app = FastAPI()
+
+
+@app.get("/")
+async def root():
+    return {"message": "Hola mundo"}
+
+
+@app.get("/items/{item_id}")
+async def read_item(item_id: int):
+    return {"item_id": item_id}
+
+
+@app.get("/users/me")
+async def read_user_me():
+    return {"user_id": "the current user"}
+
+
+@app.get("/users/{user_id}")
+async def read_user(user_id: str):
+    return {"user_id": user_id}
+
+
+from enum import Enum
+
+class ModelName(str, Enum):
+    alexnet = "alexnet"
+    resnet = "resnet"
+    lenet = "lenet"
+
+
+@app.get("/models/{model_name}")
+async def get_model(model_name: ModelName):
+    if model_name is ModelName.alexnet:
+        return {"model_name": model_name, "message": "Deep Learning"}
+    if model_name.value == "lenet":
+        return {"model_name": model_name, "message": "LeCNN"}
+    return {"model_name": model_name, "message": "Residuals"}
+
+from pydantic import BaseModel
+
+class Item(BaseModel):
+    name: str
+    description: str = None
+    price: float
+    tax: float = None
+
+
+@app.post("/items/")
+def create_item(item: Item):
+    return item
+
+
+# http://127.0.0.1:8000/items/?skip=0&limit=10
+fake_items_db = [{"item_name": "Foo"}, {"item_name": "Bar"}, {"item_name": "Baz"}]
+
+@app.get("/items/")
+async def read_item(skip: int = 0, limit: int = 10):
+    return fake_items_db[skip : skip + limit]
+
+
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+from typing import List, Optional
+
+app = FastAPI()
+
+# Modelo de datos para representar una tarea
+class Task(BaseModel):
+    id: int
+    description: str
+
+# Lista para almacenar las tareas (simulando una base de datos)
+tasks = []
+
+# Ruta para obtener todas las tareas
+@app.get("/tasks/", response_model=List[Task])
+def get_tasks(skip: int = 0, limit: int = 10):
+    return tasks[skip : skip + limit]
+
+# Ruta para obtener una tarea por su ID
+@app.get("/tasks/{task_id}", response_model=Task)
+def get_task(task_id: int):
+    task = next((task for task in tasks if task["id"] == task_id), None)
+    if task is None:
+        raise HTTPException(status_code=404, detail="Tarea no encontrada")
+    return task
+
+# Ruta para crear una nueva tarea
+@app.post("/tasks/", response_model=Task)
+def create_task(task: Task):
+    tasks.append(task.dict())
+    return task
+
+# Ruta para eliminar una tarea por su ID
+@app.delete("/tasks/{task_id}", response_model=Task)
+def delete_task(task_id: int):
+    task = next((task for task in tasks if task["id"] == task_id), None)
+    if task is None:
+        raise HTTPException(status_code=404, detail="Tarea no encontrada")
+    tasks.remove(task)
+    return task
+
+
+
+from fastapi import FastAPI
+
+app = FastAPI()
+
+class Libro(BaseModel):
+    titulo: str
+    autor: str
+    paginas: int
+    editorial: str
+```
+
+---
+
+# SQLite
+
+Sistema de gestión de bases de datos relacional que se caracteriza por ser liviano, autónomo, de código abierto y sin servidor.
+
+A diferencia de otros sistemas de bases de datos más robustos como MySQL o PostgreSQL, SQLite se ejecutra en el espacio de memoria del proceso de la aplicacion que lo utiliza y no requiere un servidor separado. Esto significa que no hay una configuracion compleja para empezar a utilizarlo y no hay un proceso externo que gestione la base de datos, lo que lo hace adecuado para aplicaciones de escritorio, dispositivos moviles y otros entornos de recursos limitados.
+
+1. Base de datos embebida
+
+2. Transacciones ACID
+
+3. Ligero y rapido
+
+4. Sin necesidad de configuracion
+
+5. Amplia compatibilidad
+
+Si bien es ideal para aplicaciones pequeñas y medianas con cargas de trabajo moderadas, puede no ser la mejor opción para aplicaciones web con grandes volúmenes de datos y alta concurrencia.
+---
+
+## Instalación
+
+SQLite viene incorporado en la biblioteca estándar de Python, lo que significa que no es necesario instalar ninguna biblioeca adicional para trabajar con bases de datos.
+
+Python incluye el módulo ```sqlite3``` que proporciona una interfaz para interacturar con bases de datos SQLit de forma sencilla y eficiente.
+
+Puedes utilizar este módulo para crear, conectar y administrar bases de datos SQLite, así como para ejecutar consultas y realizar operaciones CRUD (Create, Read, Update, Delete) en la base de datos.
+
+```python
+import sqlite3
+
+conn = sqlite3.connect("base_de_datos.db")
+
+cursor = conn.cursor()
+
+cursor.execute('''CREATE TABLE IF NOT EXISTS usuarios (
+                    id INTEGER PRIMARY KEY,
+                    nombre TEXT,
+                    edad INTEGER
+                )''')
+
+cursor.execute("INSERT INTO usuarios (nombre, edad) VALUES (?, ?)", ("Juan", 30))
+cursor.execute("INSERT INTO usuarios (nombre, edad) VALUES (?, ?)", ("María", 25))
+
+conn.commit()
+
+cursor.execute("SELECT * FROM usuarios")
+rows = cursor.fetchall()
+for row in rows:
+    print(row)
+
+conn.close()
+```
+
+---
+
+
+

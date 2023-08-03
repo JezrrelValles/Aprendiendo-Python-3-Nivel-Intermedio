@@ -1,4 +1,4 @@
-# %% [markdown]
+# %%
 # # Scripts
 
 # %%
@@ -100,7 +100,5 @@ import datetime
 fecha_actual = datetime.datetime.now().strftime("%d-%m-%Y")
 
 df.to_csv(f"dataset/web scraping/Promociones-Cyberpuerta-{fecha_actual}.csv", index=False)
-
-
 
 # %%
