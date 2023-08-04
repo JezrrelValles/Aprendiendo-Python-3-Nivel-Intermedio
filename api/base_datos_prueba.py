@@ -1,0 +1,28 @@
+import sqlite3
+
+# Conexión a la base de datos (se creará si no existe)
+conn = sqlite3.connect("prueba.db")
+
+# Crear un cursor para interacturar con la base de datos
+cursor = conn.cursor()
+
+# Crear una tabla llamada usuarios con tres columnas: id, nombre y edad
+cursor.execute('''CREATE TABLE IF NOT EXISTS usuarios (
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    nombre TEXT NOT NULL,
+                    edad INTEGER
+                )''')
+
+# Guardar los cambios y cerrar la conexión
+conn.commit()
+conn.close()
+
+conn = sqlite3.connect("prueba.db")
+
+cursor = conn.cursor()
+
+cursor.execute("INSERT INTO usuarios (nombre, edad) VALUES (?, ?)", ("Juan", 21))
+
+conn.commit()
+conn.close()
+

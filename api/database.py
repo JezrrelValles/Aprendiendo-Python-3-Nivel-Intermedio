@@ -20,13 +20,12 @@ cursor.execute("""
 conn.commit()
 conn.close()
 
-# %%
+
 class Datos(BaseModel):
     nombre: str
     edad: int
     curso: str
 
-# %%
 app = FastAPI()
 
 @app.post("/agregar/")

@@ -463,30 +463,160 @@ Puedes utilizar este módulo para crear, conectar y administrar bases de datos S
 ```python
 import sqlite3
 
+# Conexión a la base de datos (se creará si no existe)
 conn = sqlite3.connect("base_de_datos.db")
 
+# Crear un cursor para interacturar con la base de datos
 cursor = conn.cursor()
 
+# Crear una tabla llamada usuarios con tres columnas: id, nombre y edad
 cursor.execute('''CREATE TABLE IF NOT EXISTS usuarios (
-                    id INTEGER PRIMARY KEY,
-                    nombre TEXT,
+                    id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    nombre TEXT NOT NULL,
                     edad INTEGER
                 )''')
 
-cursor.execute("INSERT INTO usuarios (nombre, edad) VALUES (?, ?)", ("Juan", 30))
-cursor.execute("INSERT INTO usuarios (nombre, edad) VALUES (?, ?)", ("María", 25))
-
+# Guardar los cambios y cerrar la conexión
 conn.commit()
-
-cursor.execute("SELECT * FROM usuarios")
-rows = cursor.fetchall()
-for row in rows:
-    print(row)
-
 conn.close()
 ```
-
 ---
 
+# CRUD
 
+```python
+import sqlite3
 
+def insertar_usuario(nombre, edad):
+    conexion = sqlite3.connect("database.db")
+    cursor = conexion.cursor()
+    cursr.execute("INSERT INTO usuarios (nombre, edad) VALUES (?, ?)", (nombre, edad))
+    conexion.commit()
+    conexion.close()
+
+def consultar_usuarios():
+    conexion = sqlite3.connect("database.db")
+    cursor = conexion.cursor()
+    cursor.execute("SELECT * FROM usuarios")
+    usuarios = cursor.fetchall()
+    conexion.close()
+    return usuarios
+
+def actualizar_edad_usuario(usuario_id, nueva_edad):
+    conexion = sqlite3.connect("database.db")
+    cursor = conexion.cursor()
+    cursor.execute('UPDATE usuarios SET edad = ? WHERE id = ?', (nueva_edad, usuario_id))
+    conexion.commit()
+    conexion.close()
+
+def eliminar_usuarios(usuario_id):
+    conexion = sqlite3.connect("database.db")
+    cursor = conexion.cursor()
+    cursor.execute('DELETE FROM usuarios WHERE id=?', (usuario_id,))
+    conexion.commit()
+    conexion.close()
+
+insertar_usuario("Maria", 25)
+insertar_usuario("Juan", 30)
+
+usuarios = consultar_usuarios()
+
+print(usuarios)
+
+usuarios = actualizar_edad_usuario(1, 24)
+
+print(usuarios)
+
+usuarios = eliminar_usuario(2)
+
+print(usuarios)
+```
+---
+
+```python
+app = FastAPI()
+
+# Ruta para crear un nuevo usuario
+@app.post("/usuarios/")
+def crear_usuario(nombre: str, edad: int):
+    conexion = sqlite3.connect('mi_base_de_datos.db')
+    cursor = conexion.cursor()
+    cursor.execute('INSERT INTO usuarios (nombre, edad) VALUES (?, ?)', (nombre, edad))
+    conexion.commit()
+    conexion.close()
+    return {"mensaje": "Usuario creado exitosamente"}
+
+# Ruta para obtener todos los usuarios
+@app.get("/usuarios/")
+def obtener_usuarios():
+    conexion = sqlite3.connect('mi_base_de_datos.db')
+    cursor = conexion.cursor()
+    cursor.execute('SELECT * FROM usuarios')
+    usuarios = cursor.fetchall()
+    conexion.close()
+    return usuarios
+
+# Ruta para actualizar la edad de un usuario por su ID
+@app.put("/usuarios/{usuario_id}/")
+def actualizar_edad_usuario(usuario_id: int, nueva_edad: int):
+    conexion = sqlite3.connect('mi_base_de_datos.db')
+    cursor = conexion.cursor()
+    cursor.execute('UPDATE usuarios SET edad = ? WHERE id = ?', (nueva_edad, usuario_id))
+    conexion.commit()
+    conexion.close()
+    return {"mensaje": "Edad de usuario actualizada exitosamente"}
+
+# Ruta para eliminar un usuario por su ID
+@app.delete("/usuarios/{usuario_id}/")
+def eliminar_usuario(usuario_id: int):
+    conexion = sqlite3.connect('mi_base_de_datos.db')
+    cursor = conexion.cursor()
+    cursor.execute('DELETE FROM usuarios WHERE id = ?', (usuario_id,))
+    conexion.commit()
+    conexion.close()
+    return {"mensaje": "Usuario eliminado exitosamente"}
+```
+---
+
+```python
+import csv
+
+def leer_datos_csv(archivo_csv):
+    datos = []
+    with open(archivo_csv, newline='', encoding='utf-8') as csvfile:
+        lector = csv.DictReader(csvfile)
+        for fila in lector:
+            datos.append(fila)
+    return datos
+
+import sqlite3
+
+def crear_table():
+    conexion = sqlite3.connect("database.db")
+    cursor = conexion.cursor()
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS datos_scraping (
+            nombre TEXT,
+            edad INTEGER,
+            profesion TEXT
+        )
+    ''')
+    conexion.commit()
+    conexion.close()
+
+def insertar_datos(datos):
+    conexion = sqlite3.connect("database.db")
+    cursor = conexion.cursor()
+    for fila in datos:
+        cursor.execute('INSERT INTO datos_scraping (nombre, edad, profesion) VALUES (?, ?, ?)', 
+                       (fila['nombre'], fila['edad'], fila['profesion']))
+    conexion.commit()
+    conexion.close()
+
+if __name__ == "__main__":
+    archivo_csv = "datos.csv"
+    datos = leer_datos_csv(archivo_csv)
+    crear_tabla()
+    insertar_datos(datos)
+    print("Base de datos creada exitosamente con los datos del archivo CSV")
+```
