@@ -47,22 +47,22 @@ async def obtener_todos_datos():
     else:
         return {"mensaje": "No hay datos en la base de datos"}
 
-# @app.get("/consultar/{id}/")
-# async def consultar_datos(id: int):
-#     conn = sqlite3.connect("data.db")
-#     cursor = conn.cursor()
-#     cursor.execute("SELECT nombre, edad, curso FROM datos WHERE id=?", (id,))
-#     resultado = cursor.fetchone()
-#     conn.close()
-#     if resultado is not None:
-#         return {"nombre": resultado[0], "edad": resultado[1], "curso": resultado[2]}
-#     else:
-#         return {"mensaje": "Datos no encontrados"}
+@app.get("/consultar/{id}/")
+async def consultar_datos(id: int):
+    conn = sqlite3.connect("billboard100.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM datos WHERE id=?", (id,))
+    resultado = cursor.fetchone()
+    conn.close()
+    if resultado is not None:
+        return {"id": resultado[0], "titulo": resultado[1], "artista": resultado[2], "posicion": resultado[3]}
+    else:
+        return {"mensaje": "Datos no encontrados"}
 
 @app.put("/actualizar/{id}/")
 async def actualizar_datos(id: int, datos: Datos):
     conn = sqlite3.connect("billboard100.db")
-    cursor = conn.execute()
+    cursor = conn.cursor()
     cursor.execute("UPDATE datos SET titulo=?, artista=?, posicion=? WHERE id=?", (datos.titulo, datos.artista, datos.posicion, id))
     conn.commit()
     conn.close()    
@@ -71,7 +71,7 @@ async def actualizar_datos(id: int, datos: Datos):
 @app.delete("/eliminar/{id}/")
 async def eliminar_datos(id: int):
     conn = sqlite3.connect("billboard100.db")
-    cursor = conn.execute()
+    cursor = conn.cursor()
     cursor.execute("DELETE FROM datos WHERE id=?", (id,))
     conn.commit()
     conn.close()
