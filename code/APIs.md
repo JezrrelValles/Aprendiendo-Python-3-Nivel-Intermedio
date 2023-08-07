@@ -4,35 +4,115 @@ theme: gaia
 
 ---
 
-# Application Programming Interface (API)
+### Application Programming Interface (API)
 
-Las interfaces de programación de aplicaciones (API) son un conjunto de reglas y protocolos que permite que diferentes aplicaciones se comuniquen entre sí.
+Las interfaces de programación de aplicaciones **(API)** son un conjunto de reglas y protocolos que permiten la comunicación entre diferentes aplicaciones o sistemas de software. 
 
-Es una capa de software que permite que dos sistemas interactuen y compartan datos de manera predifinida y estructurada.
+Estas reglas y protocolos establecen cómo deben intercambiar información y cómo deben estructurar los datos para que la interacción sea efectiva y predecible.
+
+Las **API** actúan como una capa de software que permite que dos sistemas interactúen y compartan datos de manera predeterminada y estructurada. 
 
 ---
 
-Permiten que diferentes aplicaciones o servicios se conecten y colaboren de manera segura y eficiente.
+Son esenciales en el desarrollo de software, ya que facilitan la integración y la interacción entre diferentes componentes, servicios y aplicaciones.
 
-Facilitan la integración de funcionalidades y datos de un sistema en otro.
+Nos permiten utilizar funcionalidades o datos proporcionados por otras aplicaciones o servicios sin tener que conocer los detalles internos de cómo funcionan.
 
 ---
 
 Define los métodos, formatos de datos y reglas que otros desarrolladores pueden utilizar para interactura con un sistema específico.
 
-Cuando un desarrollador quiere utilizar una API, envía una solicitud a través de la API con ciertos parámetros y, a cambio, recibe una respuesta con los datos o resultados que necesita.
+Cuando un desarrollador quiere utilizar una **API**, envía una solicitud a través de la **API** con ciertos parámetros y, a cambio, recibe una respuesta con los datos o resultados que necesita.
 
 ---
 
-## Tipos de APIs
+### Tipos de APIs
 
 **1. API Web**
 
 Permiten la comunicación a través de internet. Se basan en el protocolo **HTTP** y se utilizan para acceder a recursos y servicios en la web.
 
+---
+
+**1.1 HTTP**
+
+Protocolo de comunicación utilizado en la **World Wide Web** para transferir datos entre un cliente y un servidor web.
+
+El cliente envía solicitudes **HTTP** al servidor, y el servidor responde con respuestas **HTTP** que contienen los datos solicitados.
+
+---
+
+**1.2 Métodos HTTP**
+
+Definen las acciones que se pueden realizar en los recursos identificados por URLs.
+
+**a. GET**
+
+Solicita datos de un recurso específico.
+
+**b. POST**
+
+Envía datos para que sean procesados por un recurso identificado.
+
+---
+
+**c. PUT**
+
+Actualiza por completo un recurso existente o crea uno nuevo si no existe.
+
+**d. DELETE**
+
+Elimina un recurso específico identificado por la URL.
+
+**e. PATCH**
+
+Actualiza parcialmente un recurso existente.
+
+---
+
 **2. API REST**
 
 Tipo de **API Web** que sigue los principios de **REST** *(Representational State Transfer)*. Utiliza los métodos **HTTP** *(GET, POST, PUT, DELETE)* para realizar operaciones en recursos identificados por URLs.
+
+![Alt text](image-1.png)
+
+---
+**2.1 REST**
+
+Estilo arquitectónico utilizado para diseñar **APIs Web**. Se basa en el concepto de recursos, que son entidades o datos que pueden ser accedidos y manipulados a través de **URLs**.
+
+**a. Recursos**
+
+Entidades identificables, como usuarios, publicaciones o productos, que pueden ser accedidos a través de **URLs**.
+
+**b. Métodos HTTP**
+
+**REST** utiliza los métodos **HTTP** *(GET, POST, PUT, DELETE, PATCH)* para operar en los recursos.
+
+---
+
+**c. Estado representacional**
+
+Las respuestas de las solicitudes **HTTP** en **REST** suelen contener una representación del estado del recurso.
+
+**d. Sin estado**
+
+Cada solicitud **HTTP** a un servicio **REST** debe contener toda la informacion necesaria para entender y procesar la solicitud. 
+
+El servidor no debe almacenar ningún estado de la sesión del cliente.
+
+---
+
+**e. URI**
+
+**Uniform Resource Identifier**
+
+Las **URLs** en **REST** deben ser únicas y representar de manera significativa los recursos a los que se accede.
+
+**6. Formatos de datos**
+
+**REST** generalmente utiliza formatos de datos como **JSON** *(JavaScript Object Notation)* o **XML** *(eXtensible Markup Language)* para intercambiar información.
+
 
 ---
 
@@ -46,7 +126,7 @@ Lenguaje de consulta y manipulación de datos que permite a los clientes solicit
 
 ---
 
-## Autenticación y Autorización
+### Autenticación y Autorización
 
 Muchas APIs requieren autenticación para asegurarse de que solo usuarios autorizados tengan accesos a ciertos recursos o funcionalidades.
 
@@ -54,116 +134,24 @@ La **autenticación** verifica la identidad del usuario, mientras que la **autor
 
 ---
 
-# HTTP
+### FastAPI
 
-Protocolo de comunicación utilizado en la **World Wide Web** para transferir datos entre un cliente y un servidor web.
-
-El cliente envía solicitudes HTTP al servidor, y el servidor responde con respuestas HTTP que contienen los datos solicitados.
+Web Framework para construir APIs en Python.
 
 ---
 
-## Métodos HTTP
+### Instalación
 
-Definen las acciones que se pueden realizar en los recursos identificados por URLs.
-
-**1. GET**
-
-Solicita datos de un recurso específico.
-
-**2. POST**
-
-Envía datos para que sean procesados por un recurso identificado.
-
----
-
-**3. PUT**
-
-Actualiza por completo un recurso existente o crea uno nuevo si no existe.
-
-**4. DELETE**
-
-Elimina un recurso específico identificado por la URL.
-
-**5. PATCH**
-
-Actualiza parcialmente un recurso existente.
-
----
-
-# REST
-
-Estilo arquitectónico utilizado para diseñar APIs Web. Se basa en el concepto de recursos, que son entidades o datos que pueden ser accedidos y manipulados a través de URLs.
-
-**1. Recursos**
-
-Entidades identificables, como usuarios, publicaciones o productos, que pueden ser accedidos a través de URLs.
-
-**2. Métodos HTTP**
-
-**REST** utiliza los métodos **HTTP** *(GET, POST, PUT, DELETE, PATCH)* para operar en los recursos.
-
----
-
-**3. Estado representacional**
-
-Las respuestas de las solicitudes HTTP en REST suelen contener una representación del estado del recurso.
-
-**4. Sin estado**
-
-Cada solicitud HTTP a un servicio REST debe contener toda la informacion necesaria para entender y procesar la solicitud. 
-
-El servidor no debe almacenar ningún estado de la sesión del cliente.
-
----
-
-**5. URI**
-
-Uniform Resource Identifier.
-
-Las URLs en REST deben ser únicas y representar de manera significativa los recursos a los que se accede.
-
-**6. Formatos de datos**
-
-REST generalmente utiliza formatos de datos como JSON (JavaScript Object Notation) o XML (eXtensible Markup Language) para intercambiar información.
-
----
-
-# FastAPI
-
-Framework web moderno y de alto rendimiento para construir APIs en Python.
-
-
----
-
-## Instalación
-
-Para instalar FastAPI es necesario contar con la versión Python 3.6 o posterior y un servidor web basado en ASGI.
+Para instalar **FastAPI** es necesario contar con la versión **Python 3.6** o posterior y un servidor web basado en **ASGI** como **Uvicorn**.
 
 ```python
 pip install fastapi uvicorn
 ```
-
 ---
 
-## ASGI
+### Uvicorn
 
-**Asynchronous Server Gateway Interface**
-
-Especificacion para servidores y aplicaciones web en Python que permite el procesamiento asíncrono de solicitudes HTTP.
-
----
-
-## WSGI
-
-**Web Server Gateway Interface**
-
-Especificación para servidores y aplicaciones web en Python que permite el procesamiento síncrono de solicitudes HTTP.
-
----
-
-# Uvicorn
-
-Servidor web ASGI de alto rendimiento que se utiliza principalmente para ejecutar aplicaciones web y APIs escritas en Python.
+Servidor web **ASGI** de alto rendimiento que se utiliza principalmente para ejecutar aplicaciones web y **APIs** escritas en **Python**.
 
 **1. Asincronía**
 
@@ -175,7 +163,18 @@ Esto permite que maneje múltiples conexiones simultáneamente sin bloquear el p
 
 **2. Integración con ASGI**
 
-Compatible con aplicaciones web escritas siguiendo la especificación ASGI, como FastAPI, Starlette, etc.
+Compatible con aplicaciones web escritas siguiendo la especificación **ASGI**, como **FastAPI**, **Starlette**, etc.
+
+
+**2.1 Asynchronous Server Gateway Interface (ASGI)**
+
+Especificacion para servidores y aplicaciones web en Python que permite el procesamiento asíncrono de solicitudes HTTP.
+
+**2.2 Web Server Gateway Interface (WSGI)**
+
+Especificación para servidores y aplicaciones web en Python que permite el procesamiento síncrono de solicitudes HTTP.
+
+---
 
 **3. Modo de desarrolo con recarga automática**
 
@@ -183,7 +182,7 @@ Uvicorn proporciona una opción `--reload` que, cuando se habilita, recargará a
 
 ---
 
-## Primeros pasos
+### Primeros pasos
 
 Crea un archivo `main.py` y comienza con un "Hola, mundo!".
 
@@ -199,7 +198,7 @@ def read_root():
 
 ---
 
-## Ejecutar la aplicación
+### Ejecutar la aplicación
 
 ```python
 uvicorn main:app --reload
@@ -209,9 +208,9 @@ uvicorn main:app --reload
 
 ---
 
-## Definición de rutas y parámetros
+### Definición de rutas y parámetros
 
-FastAPI utiliza decoradores para definir rutas y operaciones HTTP.
+**FastAPI** utiliza decoradores para definir rutas y operaciones **HTTP**.
 
 Puedes especificar parámetros en las rutas para recibir datos de solicitud.
 
@@ -233,7 +232,7 @@ def read_item(item_id: int, query_param: str = None):
 
 ---
 
-## Modelos y validaciones
+### Modelos y validaciones
 
 **FastAPI** permite definir modelos **Pydantic** y utilizarlos para validar y convertir automáticamente los datos de entrada y salida.
 
@@ -258,11 +257,11 @@ def create_item(item: Item):
 
 ---
 
-# Pydantic
+### Pydantic
 
-Biblioteca de Python que proporciona una forma rápida y sencilla de definir y validar datos mediante el uso de modelos de datos.
+Biblioteca de **Python** que proporciona una forma rápida y sencilla de definir y validar datos mediante el uso de modelos de datos.
 
-La principal funcionalidad de Pydantic es permitir la definicion de modelos de datos con anotaciones de tipo.
+La principal funcionalidad de **Pydantic** es permitir la definicion de modelos de datos con anotaciones de tipo.
 
 Esos modelos de datos pueden representar estructuras complejas, como diccionarios anidados o listas, y contener tipos de datos especificos para cada atributo.
 
@@ -270,7 +269,7 @@ Esos modelos de datos pueden representar estructuras complejas, como diccionario
 
 **1. Validación de datos**
 
-Pydantic se encarga de la validacion automatica de los datos proporcionados para asegurarse de que cumplan con las restricciones definidads en el modelo.
+**Pydantic** se encarga de la validacion automatica de los datos proporcionados para asegurarse de que cumplan con las restricciones definidads en el modelo.
 
 **2. Conversión de tipos**
 
@@ -281,184 +280,44 @@ Podemos convertir automáticamente los datos a los tipos adecuados, si es posibl
 
 **3. Documentación automatica**
 
-Los modelos definidos con Pydantic pueden utilizarse para generar automáticamente documentación detallada sobre los campos, tipos y restricciones.
+Los modelos definidos con **Pydantic** pueden utilizarse para generar automáticamente documentación detallada sobre los campos, tipos y restricciones.
 
 
 **4. Serialización y deserialización**
 
-Pydantic facilita la conversiÓn de los modelos a formatos de serializaciÓn como JSON o XML.
+**Pydantic** facilita la conversión de los modelos a formatos de serialización como **JSON** o **XML**.
 
 ---
 
-# OpenAPI
+### OpenAPI
 
-Estandar para describir, documentar y definir interfaces de programacion de aplicaciones (API) de manera clara y estructurada.
+Estandar para describir, documentar y definir interfaces de programacion de aplicaciones **(API)** de manera clara y estructurada.
 
-Utiliza un formato de documento YAML o JSON para describir los puntos finales de la API, los parámetros que acepta, los tipo de datos que utilizan y los métodos de solicitud permitidos (como GET, POST, PUT, DELETE, etc.).
+Utiliza un formato de documento **YAML** o **JSON** para describir los puntos finales de la **API**, los parámetros que acepta, los tipo de datos que utilizan y los métodos HTTP permitidos (como GET, POST, PUT, DELETE, etc.).
 
-Incluye información sobre las respuestas que puede devolver la API, los códigos de estado HTTP asociados y cualquier autenticación o autorización requerida para acceder a la API.
-
-**1. Documentación automática**
-
-**2. Facilita el desarrollo de clientes**
-
-**3. Mejora la colaboración**
-
-**4. Herramientas de validación**
+Incluye información sobre las respuestas que puede devolver la **API**, los códigos de estado **HTTP** asociados y cualquier autenticación o autorización requerida para acceder a la **API**.
 
 ---
 
-# Ejemplo
-
-```python
-
-from fastapi import FastAPI
-
-app = FastAPI()
-
-
-@app.get("/")
-async def root():
-    return {"message": "Hola mundo"}
-
-
-@app.get("/items/{item_id}")
-async def read_item(item_id: int):
-    return {"item_id": item_id}
-
-
-@app.get("/users/me")
-async def read_user_me():
-    return {"user_id": "the current user"}
-
-
-@app.get("/users/{user_id}")
-async def read_user(user_id: str):
-    return {"user_id": user_id}
-
-
-from enum import Enum
-
-class ModelName(str, Enum):
-    alexnet = "alexnet"
-    resnet = "resnet"
-    lenet = "lenet"
-
-
-@app.get("/models/{model_name}")
-async def get_model(model_name: ModelName):
-    if model_name is ModelName.alexnet:
-        return {"model_name": model_name, "message": "Deep Learning"}
-    if model_name.value == "lenet":
-        return {"model_name": model_name, "message": "LeCNN"}
-    return {"model_name": model_name, "message": "Residuals"}
-
-from pydantic import BaseModel
-
-class Item(BaseModel):
-    name: str
-    description: str = None
-    price: float
-    tax: float = None
-
-
-@app.post("/items/")
-def create_item(item: Item):
-    return item
-
-
-# http://127.0.0.1:8000/items/?skip=0&limit=10
-fake_items_db = [{"item_name": "Foo"}, {"item_name": "Bar"}, {"item_name": "Baz"}]
-
-@app.get("/items/")
-async def read_item(skip: int = 0, limit: int = 10):
-    return fake_items_db[skip : skip + limit]
-
-
-from fastapi import FastAPI, HTTPException
-from pydantic import BaseModel
-from typing import List, Optional
-
-app = FastAPI()
-
-# Modelo de datos para representar una tarea
-class Task(BaseModel):
-    id: int
-    description: str
-
-# Lista para almacenar las tareas (simulando una base de datos)
-tasks = []
-
-# Ruta para obtener todas las tareas
-@app.get("/tasks/", response_model=List[Task])
-def get_tasks(skip: int = 0, limit: int = 10):
-    return tasks[skip : skip + limit]
-
-# Ruta para obtener una tarea por su ID
-@app.get("/tasks/{task_id}", response_model=Task)
-def get_task(task_id: int):
-    task = next((task for task in tasks if task["id"] == task_id), None)
-    if task is None:
-        raise HTTPException(status_code=404, detail="Tarea no encontrada")
-    return task
-
-# Ruta para crear una nueva tarea
-@app.post("/tasks/", response_model=Task)
-def create_task(task: Task):
-    tasks.append(task.dict())
-    return task
-
-# Ruta para eliminar una tarea por su ID
-@app.delete("/tasks/{task_id}", response_model=Task)
-def delete_task(task_id: int):
-    task = next((task for task in tasks if task["id"] == task_id), None)
-    if task is None:
-        raise HTTPException(status_code=404, detail="Tarea no encontrada")
-    tasks.remove(task)
-    return task
-
-
-
-from fastapi import FastAPI
-
-app = FastAPI()
-
-class Libro(BaseModel):
-    titulo: str
-    autor: str
-    paginas: int
-    editorial: str
-```
-
----
-
-# SQLite
+### SQLite
 
 Sistema de gestión de bases de datos relacional que se caracteriza por ser liviano, autónomo, de código abierto y sin servidor.
 
 A diferencia de otros sistemas de bases de datos más robustos como MySQL o PostgreSQL, SQLite se ejecutra en el espacio de memoria del proceso de la aplicacion que lo utiliza y no requiere un servidor separado. Esto significa que no hay una configuracion compleja para empezar a utilizarlo y no hay un proceso externo que gestione la base de datos, lo que lo hace adecuado para aplicaciones de escritorio, dispositivos moviles y otros entornos de recursos limitados.
 
-**1. Base de datos embebida**
-
-**2. Transacciones ACID**
-
-**3. Ligero y rapido**
-
-**4. Sin necesidad de configuracion**
-
-**5. Amplia compatibilidad**
-
 Si bien es ideal para aplicaciones pequeñas y medianas con cargas de trabajo moderadas, puede no ser la mejor opción para aplicaciones web con grandes volúmenes de datos y alta concurrencia.
 
 ---
 
-## Instalación
+### Primeros pasos
 
-SQLite viene incorporado en la biblioteca estándar de Python, lo que significa que no es necesario instalar ninguna biblioeca adicional para trabajar con bases de datos.
+**SQLite** viene incorporado en la biblioteca estándar de **Python**, lo que significa que no es necesario instalar ninguna biblioteca adicional para trabajar con bases de datos.
 
-Python incluye el módulo ```sqlite3``` que proporciona una interfaz para interacturar con bases de datos SQLit de forma sencilla y eficiente.
+**Python** incluye el módulo ```sqlite3``` que proporciona una interfaz para interacturar con bases de datos **SQLite** de forma sencilla y eficiente.
 
-Puedes utilizar este módulo para crear, conectar y administrar bases de datos SQLite, así como para ejecutar consultas y realizar operaciones CRUD (Create, Read, Update, Delete) en la base de datos.
+Puedes utilizar este módulo para crear, conectar y administrar bases de datos **SQLite**, así como para ejecutar consultas y realizar operaciones **CRUD** (Create, Read, Update, Delete) en la base de datos.
+
+---
 
 ```python
 import sqlite3
@@ -466,9 +325,11 @@ import sqlite3
 # Conexión a la base de datos (se creará si no existe)
 conn = sqlite3.connect("base_de_datos.db")
 
-# Crear un cursor para interacturar con la base de datos
+# Crear un cursor para interactuar con la base de datos
 cursor = conn.cursor()
-
+```
+---
+```python
 # Crear una tabla llamada usuarios con tres columnas: id, nombre y edad
 cursor.execute('''CREATE TABLE IF NOT EXISTS usuarios (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -476,147 +337,175 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS usuarios (
                     edad INTEGER
                 )''')
 
+# Agregar un nuevo usuario
+nuevo_usuario = ("John Doe", 30)
+cursor.execute("INSERT INTO usuarios (nombre, edad) VALUES (?, ?)", nuevo_usuario)
+
+# Recuperar información de la tabla de usuarios
+cursor.execute("SELECT * FROM usuarios")
+usuarios = cursor.fetchall()
+
+print("Usuarios:")
+for usuario in usuarios:
+    print(f"ID: {usuario[0]}, Nombre: {usuario[1]}, Edad: {usuario[2]}")
+
+# Actualizar la edad de un usuario
+usuario_a_actualizar = ("John Doe",)
+nueva_edad = 31
+cursor.execute("UPDATE usuarios SET edad = ? WHERE nombre = ?", (nueva_edad, usuario_a_actualizar[0]))
+
+# Eliminar un usuario
+usuario_a_eliminar = ("John Doe",)
+cursor.execute("DELETE FROM usuarios WHERE nombre = ?", usuario_a_eliminar)
+
 # Guardar los cambios y cerrar la conexión
 conn.commit()
 conn.close()
 ```
 ---
-
-# CRUD
+**Base de datos**
 
 ```python
 import sqlite3
-
-def insertar_usuario(nombre, edad):
-    conexion = sqlite3.connect("database.db")
-    cursor = conexion.cursor()
-    cursr.execute("INSERT INTO usuarios (nombre, edad) VALUES (?, ?)", (nombre, edad))
-    conexion.commit()
-    conexion.close()
-
-def consultar_usuarios():
-    conexion = sqlite3.connect("database.db")
-    cursor = conexion.cursor()
-    cursor.execute("SELECT * FROM usuarios")
-    usuarios = cursor.fetchall()
-    conexion.close()
-    return usuarios
-
-def actualizar_edad_usuario(usuario_id, nueva_edad):
-    conexion = sqlite3.connect("database.db")
-    cursor = conexion.cursor()
-    cursor.execute('UPDATE usuarios SET edad = ? WHERE id = ?', (nueva_edad, usuario_id))
-    conexion.commit()
-    conexion.close()
-
-def eliminar_usuarios(usuario_id):
-    conexion = sqlite3.connect("database.db")
-    cursor = conexion.cursor()
-    cursor.execute('DELETE FROM usuarios WHERE id=?', (usuario_id,))
-    conexion.commit()
-    conexion.close()
-
-insertar_usuario("Maria", 25)
-insertar_usuario("Juan", 30)
-
-usuarios = consultar_usuarios()
-
-print(usuarios)
-
-usuarios = actualizar_edad_usuario(1, 24)
-
-print(usuarios)
-
-usuarios = eliminar_usuario(2)
-
-print(usuarios)
-```
----
-
-```python
-app = FastAPI()
-
-# Ruta para crear un nuevo usuario
-@app.post("/usuarios/")
-def crear_usuario(nombre: str, edad: int):
-    conexion = sqlite3.connect('mi_base_de_datos.db')
-    cursor = conexion.cursor()
-    cursor.execute('INSERT INTO usuarios (nombre, edad) VALUES (?, ?)', (nombre, edad))
-    conexion.commit()
-    conexion.close()
-    return {"mensaje": "Usuario creado exitosamente"}
-
-# Ruta para obtener todos los usuarios
-@app.get("/usuarios/")
-def obtener_usuarios():
-    conexion = sqlite3.connect('mi_base_de_datos.db')
-    cursor = conexion.cursor()
-    cursor.execute('SELECT * FROM usuarios')
-    usuarios = cursor.fetchall()
-    conexion.close()
-    return usuarios
-
-# Ruta para actualizar la edad de un usuario por su ID
-@app.put("/usuarios/{usuario_id}/")
-def actualizar_edad_usuario(usuario_id: int, nueva_edad: int):
-    conexion = sqlite3.connect('mi_base_de_datos.db')
-    cursor = conexion.cursor()
-    cursor.execute('UPDATE usuarios SET edad = ? WHERE id = ?', (nueva_edad, usuario_id))
-    conexion.commit()
-    conexion.close()
-    return {"mensaje": "Edad de usuario actualizada exitosamente"}
-
-# Ruta para eliminar un usuario por su ID
-@app.delete("/usuarios/{usuario_id}/")
-def eliminar_usuario(usuario_id: int):
-    conexion = sqlite3.connect('mi_base_de_datos.db')
-    cursor = conexion.cursor()
-    cursor.execute('DELETE FROM usuarios WHERE id = ?', (usuario_id,))
-    conexion.commit()
-    conexion.close()
-    return {"mensaje": "Usuario eliminado exitosamente"}
-```
----
-
-```python
 import csv
 
-def leer_datos_csv(archivo_csv):
-    datos = []
-    with open(archivo_csv, newline='', encoding='utf-8') as csvfile:
-        lector = csv.DictReader(csvfile)
-        for fila in lector:
-            datos.append(fila)
-    return datos
+def create_ranking_table():
+    # Conexión a la base de datos "hot100.db"
+    conn = sqlite3.connect("hot100.db")
+    # Crear un cursor para interactuar con la base de datos
+    cursor = conn.cursor()
+
+    # Crear la tabla "ranking" si no existe
+    cursor.execute("""CREATE TABLE IF NOT EXISTS ranking(
+                   id INTEGER PRIMARY KEY,
+                   artist TEXT NOT NULL,
+                   song TEXT NOT NULL,
+                   position INTEGER NOT NULL
+                   )
+                   """)
+    
+    # Confirmar los cambios en la base de datos y cerrar la conexión
+    conn.commit()
+    conn.close()
+```
+
+---
+```python
+def read_csv_file(csv_file):
+    # Leer el archivo CSV y guardar los datos en una lista de diccionarios
+    with open(csv_file, newline='') as file:
+        reader = csv.DictReader(file)
+        data = [row for row in reader]
+    return data
+
+def insert_data_to_ranking_table(data):
+    # Conexión a la base de datos "hot100.db"
+    conn = sqlite3.connect("hot100.db")
+    # Crear un cursor para interactuar con la base de datos
+    cursor = conn.cursor()
+
+    # Insertar cada fila de datos en la tabla "ranking"
+    for row in data:
+        cursor.execute("""
+            INSERT INTO ranking (artist, song, position)
+            VALUES (?, ?, ?)
+        """, (row["Artist"], row["Song"], int(row["Position"])))
+
+    # Confirmar los cambios en la base de datos y cerrar la conexión
+    conn.commit()
+    conn.close()
+```
+---
+```python
+if __name__ == "__main__":
+    # Nombre del archivo CSV que contiene los datos
+    csv_file = "Billboard Hot 100-07-08-2023.csv"
+    
+    # Leer los datos del archivo CSV y guardarlos en una lista de diccionarios
+    data_to_insert = read_csv_file(csv_file)
+    
+    # Crear la tabla "ranking" en la base de datos "hot100.db"
+    create_ranking_table()
+    
+    # Insertar los datos en la tabla "ranking" desde el archivo CSV
+    insert_data_to_ranking_table(data_to_insert)
+```
+
+---
+
+**API**
+
+```python
 
 import sqlite3
+from fastapi import FastAPI
+from pydantic import BaseModel
 
-def crear_table():
-    conexion = sqlite3.connect("database.db")
-    cursor = conexion.cursor()
-    cursor.execute('''
-        CREATE TABLE IF NOT EXISTS datos_scraping (
-            nombre TEXT,
-            edad INTEGER,
-            profesion TEXT
-        )
-    ''')
-    conexion.commit()
-    conexion.close()
 
-def insertar_datos(datos):
-    conexion = sqlite3.connect("database.db")
-    cursor = conexion.cursor()
-    for fila in datos:
-        cursor.execute('INSERT INTO datos_scraping (nombre, edad, profesion) VALUES (?, ?, ?)', 
-                       (fila['nombre'], fila['edad'], fila['profesion']))
-    conexion.commit()
-    conexion.close()
+class Item(BaseModel):
+    song: str
+    artist: str
+    position: int
 
-if __name__ == "__main__":
-    archivo_csv = "datos.csv"
-    datos = leer_datos_csv(archivo_csv)
-    crear_tabla()
-    insertar_datos(datos)
-    print("Base de datos creada exitosamente con los datos del archivo CSV")
+app = FastAPI()
+
+
+@app.post("/agregar_elemento/")
+async def agregar_elemento(item: Item):
+    conn = sqlite3.connect("hot100.db")
+    cursor = conn.cursor()
+    cursor.execute("INSERT INTO ranking (artist, song, position) VALUES (?, ?, ?)", (item.artist, item.song, item.position))
+    conn.commit()
+    conn.close()
+    return {"mensaje": "Datos agregados exitosamente"}
+```
+---
+
+```python
+@app.get("/leer_elementos/")
+async def leer_elementos():
+    conn = sqlite3.connect("hot100.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT position, song, artist FROM ranking")
+    resultados = cursor.fetchall()
+    conn.close()
+    if resultados:
+        return [{"position": resultado[0], "song": resultado[1], "artist": resultado[2]} for resultado in resultados]
+    else:
+        return {"mensaje": "No hay datos en la base de datos"}
+
+
+@app.get("/leer_elemento/{id}/")
+async def leer_elemento(id: int):
+    conn = sqlite3.connect("hot100.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT position, song, artist FROM ranking WHERE id=?", (id,))
+    resultado = cursor.fetchone()
+    conn.close()
+    if resultado is not None:
+        return {"position": resultado[0], "song": resultado[1], "artist": resultado[2]}
+    else:
+        return {"mensaje": "Datos no encontrados"}
+```
+---
+
+```python
+@app.put("/actualizar_elemento/{id}/")
+async def actualizar_elemento(id: int, item: Item):
+    conn = sqlite3.connect("hot100.db")
+    cursor = conn.cursor()
+    cursor.execute("UPDATE ranking SET artist=?, song=?, position=? WHERE id=?", (item.artist, item.song, item.position, id))
+    conn.commit()
+    conn.close()
+    return {"mensaje": "Datos actualizados exitosamente"}
+
+
+@app.delete("/eliminar_elemento/{id}/")
+async def eliminar_elemento(id: int):
+    conn = sqlite3.connect("hot100.db")
+    cursor = conn.cursor()
+    cursor.execute("DELETE FROM ranking WHERE id=?", (id,))
+    conn.commit()
+    conn.close()
+    return {"mensaje": "Datos eliminados exitosamente"}
 ```
