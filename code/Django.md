@@ -13,10 +13,34 @@ Hay varias herramientas para crear y gestionar entornos virtuales en **Python**,
 
 ---
 
-### venv
+### Primeros pasos
 
+Ingresa a la paleta de comandos en **VS Code** con el comando `Ctrl + Shift + P` o seleccionando desde la pestaña `View` en **VS Code**.
 
+Busca `Python: Default Interpreter` y selecciona la versión de **Python** que deseas usar para este proyecto.
 
+Ahora, abre una terminal dentro de VS Code con el comando `Ctrl + Shift + ñ` o seleccionando desde la pestaña `Terminal` en **VS Code**.
+
+En la terminal, ejecuta el siguiente comando para crear un entorno virtual con el nombre que elijas. 
+```python
+python -m venv nombre_env
+```
+---
+
+### Activación y desactivación
+
+Depues de crear el entorno virtual, puedes activarlo ejecutando el siguiente comando en la misma terminal.
+
+```python
+nombre_env/Scripts/activate
+```
+
+Ahora, puedes instalar las bibliotecas y paquetes especificos que necesita tu proyecto dentro del entorno virtual activado.
+
+Cuando hayas terminado de trabajar en tu proyecto y quieras salir del entorno virutal, simplemente ejectuta el comando en la terminal.
+```python
+nombre_env/Scripts/deactivate
+```
 
 ---
 
