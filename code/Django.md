@@ -1,6 +1,22 @@
 ---
 marp: true
 theme: gaia
+---
+
+### Entornos virtuales
+
+Los entornos virtuales de desarrollo o `virtualenvs` son herramientas que permiten aislar y gestionar las dependencias de un proyeto específico.
+
+Estos entornos virtuales se utilizan para evitar conflictos entre las bibliotecas y paquetes de diferentes proyectos, lo que facilita la gestión de las dependiencias y hace que el desarrollo sea más ordenado y eficiente.
+
+Hay varias herramientas para crear y gestionar entornos virtuales en **Python**, entre las que destacan `virtualenv` y `venv`.
+
+---
+
+### venv
+
+
+
 
 ---
 
