@@ -19,6 +19,8 @@ Ingresa a la paleta de comandos en **VS Code** con el comando `Ctrl + Shift + P`
 
 Busca `Python: Default Interpreter` y selecciona la versión de **Python** que deseas usar para este proyecto.
 
+---
+
 Ahora, abre una terminal dentro de VS Code con el comando `Ctrl + Shift + ñ` o seleccionando desde la pestaña `Terminal` en **VS Code**.
 
 En la terminal, ejecuta el siguiente comando para crear un entorno virtual con el nombre que elijas. 
@@ -47,6 +49,73 @@ nombre_env/Scripts/deactivate
 ### Django
 
 **Web Framework** para la creación de aplicaciones web en **Python**.
+
+---
+
+**1. Modelo-Vista-Plantilla (MVT)**
+
+![Alt text](image-3.png)
+
+---
+
+En esta arquitectura, el **Modelo** representa los datos y la lógica de la base de datos, la **Vista** maneja la presentación y la **Plantilla** se encarga de la lógica de presentación.
+
+**2. Object-Relational Mapping (ORM)**
+
+**Django** proporciona un **ORM** que permite a los desarrolladores interactuar con la base de datos utilizando objetos y métodos en lugar de escribir consultas **SQL** directamente.
+
+Esto facilita la gestión de datos y la abstracción de la capa de base de datos.
+
+---
+
+**3. Enrutamiento de URLs**
+
+**Django** ofrece un sistema de enrutamiento que permite mapear **URLs** a vistas específicas. Esto facilita la creación de rutas para diferentes páginas y acciones en tu aplicación web.
+
+**4. Plantillas**
+
+**Django** incluye un sistema de plantillas que permite separar la lógica de presentación del código **Python**. Esto facilita la creación de páginas web dinámicas y la reutilización de componentes.
+
+---
+
+**5. Autenticación y autorización**
+
+**Django** proporciona un sistema de autenticación y autorización listo para usar. Puedes gestionar usuarios, roles y permisos de manera eficiente.
+
+**6. Admin panel**
+
+**Django** genera automáticamente un panel de administración para tu aplicación basado en el modelo de datos que defines. Esto facilita la gestión y manipulación de datos de la base de datos sin tener que escribir una interfaz de administración desde cero.
+
+---
+
+**7. Formularios**
+
+**Django** ofrece un sistema de formularios que facilita la validación y el manejo de datos enviados por los usuarios a través de formularios web.
+
+
+**8. Internacionalización y localización**
+
+Puedes crear aplicaciones web multilingües y adaptadas a diferentes regiones utilizando las capacidades de internacionalización y localización de **Django.**
+
+---
+
+**9. Seguridad**
+
+**Django** incorpora medidas de seguridad para prevenir vulnerabilidades comunes, como ataques de inyección **SQL**, cross-site scripting **XSS** y más.
+
+**10. Caché y optimizacion de consultas**
+
+**Django** proporciona herramientas para cachear contenido y optimizar consultas de base de datos, mejorando el rendimiento de la aplicación.
+
+---
+
+**11. Migraciones de base de datos**
+
+Con las migraciones de **Django**, puedes realizar cambios en el modelo de datos y aplicarlos a la base de datos de manera sencilla y controlada.
+
+**12. Soporte para REST y GraphQL**
+
+**Django** ha evolucionado para admitir **APIs REST** y **GraphQL** para crear aplicaciones de una sola página y servicios web.
 
 ---
 
