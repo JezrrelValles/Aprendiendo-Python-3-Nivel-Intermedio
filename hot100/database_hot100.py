@@ -33,14 +33,14 @@ def insert_data_to_ranking_table(data):
         cursor.execute("""
             INSERT INTO ranking (artist, song, position)
             VALUES (?, ?, ?)
-        """, (row["Artist"], row["Song"], int(row["Position"])))
+        """, (row["Artist"], row["Song"], row["Position"]))
 
     conn.commit()
     conn.close()
 
 # %%
 if __name__ == "__main__":
-    csv_file = "Billboard Hot 100-07-08-2023.csv"
+    csv_file = "Billboard Hot 100-08-08-2023.csv"
     data_to_insert = read_csv_file(csv_file)
     insert_data_to_ranking_table(data_to_insert)
 

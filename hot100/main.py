@@ -42,7 +42,7 @@ async def leer_elemento(id: int):
     cursor.execute("SELECT position, song, artist FROM ranking WHERE id=?", (id,))
     resultado = cursor.fetchone()
     conn.close()
-    if resultado is not None:
+    if resultado:
         return {"position": resultado[0], "song": resultado[1], "artist": resultado[2]}
     else:
         return {"mensaje": "Datos no encontrados"}
